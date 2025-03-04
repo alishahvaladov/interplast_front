@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Showcase</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <style>
+      :where([class^="ri-"])::before {
+        content: "\f3c2";
+      }
+      .filter-panel {
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+      }
+      .filter-panel.show {
+        transform: translateX(0);
+      }
+      input[type="number"]::-webkit-inner-spin-button,
+      input[type="number"]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#4F46E5",
+              secondary: "#E5E7EB",
+            },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-white min-h-screen">
+    <div class="max-w-7xl mx-auto px-4 py-8">
+      <div class="flex items-center justify-between mb-8">
+        <h1 class="text-3xl font-semibold text-gray-900">Our Products</h1>
+        <div class="relative flex items-center w-96">
+          <div class="absolute left-3 w-5 h-5 flex items-center justify-center">
+            <i class="ri-search-line text-gray-400"></i>
+          </div>
+          <input
+            type="text"
+            placeholder="Search products..."
+            class="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-full text-sm focus:outline-none focus:border-primary"
+          />
+        </div>
+      </div>
+      <div
+        class="flex gap-4 overflow-x-auto pb-4 mb-8 scrollbar-hide"
+        id="categoryContainer"
+      >
+        <button
+          class="flex items-center gap-2 px-6 py-2 bg-primary text-white rounded-full whitespace-nowrap !rounded-button"
+        >
+          All
+        </button>
+      </div>
+      <div
+        id="productContainer"
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+      ></div>
+    </div>
+
+    <script src="./assets/js/product.js"></script>
+  </body>
+</html>

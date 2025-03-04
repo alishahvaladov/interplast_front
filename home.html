@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="az">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dekorativ Məhsullar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <style>
+      :where([class^="ri-"])::before {
+        content: "\f3c2";
+      }
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .slide-in {
+        animation: slideIn 0.5s ease forwards;
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#E6B89C",
+              secondary: "#9CB4CC",
+            },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-white min-h-screen">
+    <nav class="fixed w-full bg-white/90 backdrop-blur-sm z-50 shadow-sm">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
+          <div class="flex items-center">
+            <img
+              style="height: 50px; width: 50px; object-fit: cover"
+              src="./interplast.jpg"
+            />
+          </div>
+          <div class="hidden md:flex items-center space-x-8">
+            <a href="#" class="text-gray-700 hover:text-primary">Ana Səhifə</a>
+            <a href="products.html" class="text-gray-700 hover:text-primary"
+              >Məhsullar</a
+            >
+            <a href="#" class="text-gray-700 hover:text-primary">Haqqımızda</a>
+            <a href="#" class="text-gray-700 hover:text-primary">Əlaqə</a>
+          </div>
+          <div class="md:hidden flex items-center">
+            <button id="menuBtn" class="text-gray-700 hover:text-primary">
+              <i class="ri-menu-line text-2xl"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div id="mobileMenu" class="hidden md:hidden bg-white w-full border-t">
+        <div class="px-4 py-2 space-y-2">
+          <a href="#" class="block py-2 text-gray-700 hover:text-primary"
+            >Ana Səhifə</a
+          >
+          <a href="#" class="block py-2 text-gray-700 hover:text-primary"
+            >Məhsullar</a
+          >
+          <a href="#" class="block py-2 text-gray-700 hover:text-primary"
+            >Haqqımızda</a
+          >
+          <a href="#" class="block py-2 text-gray-700 hover:text-primary"
+            >Əlaqə</a
+          >
+        </div>
+      </div>
+    </nav>
+    <main>
+      <section
+        class="relative h-screen bg-cover bg-center"
+        style="
+          background-image: url('https://public.readdy.ai/ai/img_res/9d5891b13773c5076fcbd72c2ed01e76.jpg');
+        "
+      >
+        <div class="absolute inset-0 bg-black/30"></div>
+        <div class="relative max-w-7xl mx-auto px-4 h-full flex items-center">
+          <div class="text-white max-w-2xl">
+            <h1 class="text-5xl font-bold mb-6">
+              Eviniz üçün Əla Dekorativ Həllər
+            </h1>
+            <p class="text-xl mb-8">
+              Həyatınıza zəriflik və stil qatın. Yüksək keyfiyyətli dekorativ
+              məhsullarımızla məkanınızı dəyişdirin.
+            </p>
+            <button
+              class="bg-primary text-white px-8 py-3 !rounded-button hover:bg-primary/90 transition-colors"
+            >
+              İndi Kəşf Edin
+            </button>
+          </div>
+        </div>
+      </section>
+      <section class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+          <div
+            class="flex flex-col md:flex-row justify-between items-center gap-12"
+          >
+            <div
+              class="feature-card text-center p-8 bg-white rounded-2xl shadow-lg flex-1"
+            >
+              <div
+                class="w-16 h-16 mx-auto mb-4 bg-primary/10 rounded-full flex items-center justify-center"
+              >
+                <i class="ri-heart-line text-2xl text-primary"></i>
+              </div>
+              <h3 class="text-xl font-semibold mb-3">Müştəri Məmnuniyyəti</h3>
+              <p class="text-gray-600">
+                100% müştəri məmnuniyyəti bizim əsas prioritetimizdir
+              </p>
+            </div>
+            <div
+              class="feature-card text-center p-8 bg-white rounded-2xl shadow-lg flex-1"
+            >
+              <div
+                class="w-16 h-16 mx-auto mb-4 bg-primary/10 rounded-full flex items-center justify-center"
+              >
+                <i class="ri-palette-line text-2xl text-primary"></i>
+              </div>
+              <h3 class="text-xl font-semibold mb-3">Peşəkar Dizayn</h3>
+              <p class="text-gray-600">
+                Təcrübəli dizaynerlərimiz sizin üçün ən yaxşı həlləri təqdim
+                edir
+              </p>
+            </div>
+            <div
+              class="feature-card text-center p-8 bg-white rounded-2xl shadow-lg flex-1"
+            >
+              <div
+                class="w-16 h-16 mx-auto mb-4 bg-primary/10 rounded-full flex items-center justify-center"
+              >
+                <i class="ri-shield-star-line text-2xl text-primary"></i>
+              </div>
+              <h3 class="text-xl font-semibold mb-3">Keyfiyyət Nəticələri</h3>
+              <p class="text-gray-600">
+                Ən yüksək keyfiyyət standartlarına uyğun məhsullar
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="py-24">
+        <div class="max-w-7xl mx-auto px-4">
+          <h2 class="text-3xl font-bold text-center mb-16">
+            Məhsul Kateqoriyaları
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div
+              class="product-card bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow group"
+            >
+              <div class="relative">
+                <img
+                  src="https://public.readdy.ai/ai/img_res/d1163e37f64cb143100ce4bf10eba999.jpg"
+                  alt="Vazalar"
+                  class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+                <div
+                  class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center"
+                >
+                  <button
+                    onclick="showDetails('vazalar')"
+                    class="bg-white text-gray-900 px-6 py-2 !rounded-button transform -translate-y-4 group-hover:translate-y-0 transition-transform duration-300"
+                  >
+                    Daha Ətraflı
+                  </button>
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold mb-2">Vazalar</h3>
+                <p class="text-gray-600">Müasir və klassik dizaynda vazalar</p>
+              </div>
+            </div>
+            <div
+              class="product-card bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow group"
+            >
+              <div class="relative">
+                <img
+                  src="https://public.readdy.ai/ai/img_res/46b15cd6b7048349a3e16dc121381939.jpg"
+                  alt="Divar Dekorları"
+                  class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+                <div
+                  class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center"
+                >
+                  <button
+                    onclick="showDetails('divar')"
+                    class="bg-white text-gray-900 px-6 py-2 !rounded-button transform -translate-y-4 group-hover:translate-y-0 transition-transform duration-300"
+                  >
+                    Daha Ətraflı
+                  </button>
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold mb-2">Divar Dekorları</h3>
+                <p class="text-gray-600">
+                  Divarlarınız üçün bənzərsiz aksesuarlar
+                </p>
+              </div>
+            </div>
+            <div
+              class="product-card bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow group"
+            >
+              <div class="relative">
+                <img
+                  src="https://public.readdy.ai/ai/img_res/088489bf87c89e7b6a555fe4c4727d39.jpg"
+                  alt="Yastıqlar"
+                  class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+                <div
+                  class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center"
+                >
+                  <button
+                    onclick="showDetails('yastiqlar')"
+                    class="bg-white text-gray-900 px-6 py-2 !rounded-button transform -translate-y-4 group-hover:translate-y-0 transition-transform duration-300"
+                  >
+                    Daha Ətraflı
+                  </button>
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold mb-2">Yastıqlar</h3>
+                <p class="text-gray-600">Rahat və dekorativ yastıqlar</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          id="detailsModal"
+          class="fixed inset-0 bg-black/50 hidden items-center justify-center z-50"
+        >
+          <div
+            class="bg-white rounded-xl max-w-2xl w-full mx-4 max-h-[90vh] overflow-y-auto"
+          >
+            <div class="p-6">
+              <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-semibold" id="modalTitle"></h3>
+                <button
+                  onclick="closeModal()"
+                  class="text-gray-500 hover:text-gray-700"
+                >
+                  <i class="ri-close-line text-2xl"></i>
+                </button>
+              </div>
+              <div id="modalContent"></div>
+              <div class="mt-8 flex justify-end">
+                <button
+                  onclick="closeModal()"
+                  class="bg-primary text-white px-6 py-2 !rounded-button hover:bg-primary/90"
+                >
+                  Bağla
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <script>
+        const productDetails = {
+          vazalar: {
+            title: "Vazalar",
+            content: `
+<div class="space-y-6">
+<img src="https://public.readdy.ai/ai/img_res/dc55195a1e254949f3dd0da4b8db87f8.jpg" alt="Vazalar" class="w-full h-64 object-cover rounded-lg mb-6">
+<div class="grid grid-cols-2 gap-4 mb-6">
+<div class="bg-gray-50 p-4 rounded-lg">
+<h4 class="font-semibold mb-2">Müasir Kolleksiya</h4>
+<p class="text-gray-600">Minimalist dizayn və müasir materiallardan hazırlanmış vazalar</p>
+</div>
+<div class="bg-gray-50 p-4 rounded-lg">
+<h4 class="font-semibold mb-2">Klassik Kolleksiya</h4>
+<p class="text-gray-600">Ənənəvi üslubda hazırlanmış əl işi vazalar</p>
+</div>
+</div>
+<div class="space-y-4">
+<h4 class="font-semibold">Xüsusiyyətlər:</h4>
+<ul class="list-disc list-inside text-gray-600 space-y-2">
+<li>Yüksək keyfiyyətli materiallar</li>
+<li>Əl işi hazırlanma</li>
+<li>Müxtəlif ölçü və rəng seçimləri</li>
+<li>Asanlıqla təmizlənən</li>
+<li>Uzunömürlü istifadə</li>
+</ul>
+</div>
+<div class="mt-8">
+<h4 class="font-semibold mb-4">Məhsullar</h4>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+<div class="bg-white rounded-lg shadow-md overflow-hidden">
+<img src="https://public.readdy.ai/ai/img_res/cbf855acedb5623661d8585c0f2d4d1c.jpg" alt="Vaza 1" class="w-full h-40 object-cover">
+<div class="p-4">
+<h5 class="font-medium">Modern Seramik Vaza</h5>
+<p class="text-gray-600 text-sm">89.99 AZN</p>
+</div>
+</div>
+<div class="bg-white rounded-lg shadow-md overflow-hidden">
+<img src="https://public.readdy.ai/ai/img_res/223c1523c310cd77730458a6bac87de3.jpg" alt="Vaza 2" class="w-full h-40 object-cover">
+<div class="p-4">
+<h5 class="font-medium">Qızılı Şüşə Vaza</h5>
+<p class="text-gray-600 text-sm">129.99 AZN</p>
+</div>
+</div>
+<div class="bg-white rounded-lg shadow-md overflow-hidden">
+<img src="https://public.readdy.ai/ai/img_res/bfad6cee764bf939e80dad099f2249a7.jpg" alt="Vaza 3" class="w-full h-40 object-cover">
+<div class="p-4">
+<h5 class="font-medium">Əl İşi Gil Vaza</h5>
+<p class="text-gray-600 text-sm">149.99 AZN</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+`,
+          },
+          divar: {
+            title: "Divar Dekorları",
+            content: `
+<div class="space-y-6">
+<img src="https://public.readdy.ai/ai/img_res/4aff41c5b7212ae157914231662b8643.jpg" alt="Divar Dekorları" class="w-full h-64 object-cover rounded-lg mb-6">
+<div class="grid grid-cols-2 gap-4 mb-6">
+<div class="bg-gray-50 p-4 rounded-lg">
+<h4 class="font-semibold mb-2">Güzgülər</h4>
+<p class="text-gray-600">Dekorativ çərçivəli güzgülər</p>
+</div>
+<div class="bg-gray-50 p-4 rounded-lg">
+<h4 class="font-semibold mb-2">Divar Rəsmləri</h4>
+<p class="text-gray-600">Müasir və klassik rəsm əsərləri</p>
+</div>
+</div>
+<div class="space-y-4">
+<h4 class="font-semibold">Kolleksiya:</h4>
+<ul class="list-disc list-inside text-gray-600 space-y-2">
+<li>Abstract rəsmlər</li>
+<li>Dekorativ güzgülər</li>
+<li>3D divar dekorları</li>
+<li>Vintage çərçivələr</li>
+<li>Metal divar aksesuarları</li>
+</ul>
+</div>
+<div class="mt-8">
+<h4 class="font-semibold mb-4">Məhsullar</h4>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+<div class="bg-white rounded-lg shadow-md overflow-hidden">
+<img src="https://public.readdy.ai/ai/img_res/8228a19ce620fe80235ee8dd621ce744.jpg" alt="Divar Dekor 1" class="w-full h-40 object-cover">
+<div class="p-4">
+<h5 class="font-medium">Abstract Divar Rəsmi</h5>
+<p class="text-gray-600 text-sm">199.99 AZN</p>
+</div>
+</div>
+<div class="bg-white rounded-lg shadow-md overflow-hidden">
+<img src="https://public.readdy.ai/ai/img_res/067432cd6be7992d8bcad86c4b5e38f1.jpg" alt="Divar Dekor 2" class="w-full h-40 object-cover">
+<div class="p-4">
+<h5 class="font-medium">Dekorativ Güzgü</h5>
+<p class="text-gray-600 text-sm">299.99 AZN</p>
+</div>
+</div>
+<div class="bg-white rounded-lg shadow-md overflow-hidden">
+<img src="https://public.readdy.ai/ai/img_res/22d7ae53e844fe3d8ca0ee9ed35215d6.jpg" alt="Divar Dekor 3" class="w-full h-40 object-cover">
+<div class="p-4">
+<h5 class="font-medium">3D Metal Divar Dekoru</h5>
+<p class="text-gray-600 text-sm">249.99 AZN</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+`,
+          },
+          yastiqlar: {
+            title: "Yastıqlar",
+            content: `
+<div class="space-y-6">
+<img src="https://public.readdy.ai/ai/img_res/acc142174613ac96188e39b52c40d590.jpg" alt="Yastıqlar" class="w-full h-64 object-cover rounded-lg mb-6">
+<div class="grid grid-cols-2 gap-4 mb-6">
+<div class="bg-gray-50 p-4 rounded-lg">
+<h4 class="font-semibold mb-2">Dekorativ Yastıqlar</h4>
+<p class="text-gray-600">Müxtəlif naxış və teksturalar</p>
+</div>
+<div class="bg-gray-50 p-4 rounded-lg">
+<h4 class="font-semibold mb-2">Divan Yastıqları</h4>
+<p class="text-gray-600">Rahat və yumşaq materiallar</p>
+</div>
+</div>
+<div class="space-y-4">
+<h4 class="font-semibold">Materiallar:</h4>
+<ul class="list-disc list-inside text-gray-600 space-y-2">
+<li>100% pambıq</li>
+<li>Məxmər</li>
+<li>Kətan</li>
+<li>İpək</li>
+<li>Yun</li>
+</ul>
+</div>
+<div class="mt-8">
+<h4 class="font-semibold mb-4">Məhsullar</h4>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+<div class="bg-white rounded-lg shadow-md overflow-hidden">
+<img src="https://public.readdy.ai/ai/img_res/351dea73a08e84f2717d70ea1aaf30c3.jpg" alt="Yastıq 1" class="w-full h-40 object-cover">
+<div class="p-4">
+<h5 class="font-medium">Məxmər Dekorativ Yastıq</h5>
+<p class="text-gray-600 text-sm">79.99 AZN</p>
+</div>
+</div>
+<div class="bg-white rounded-lg shadow-md overflow-hidden">
+<img src="https://public.readdy.ai/ai/img_res/59daaa895b7fab48ca29b51e0272353f.jpg" alt="Yastıq 2" class="w-full h-40 object-cover">
+<div class="p-4">
+<h5 class="font-medium">İpək Naxışlı Yastıq</h5>
+<p class="text-gray-600 text-sm">99.99 AZN</p>
+</div>
+</div>
+<div class="bg-white rounded-lg shadow-md overflow-hidden">
+<img src="https://public.readdy.ai/ai/img_res/3560ece4f315ae5d9d3381ad8fd0842c.jpg" alt="Yastıq 3" class="w-full h-40 object-cover">
+<div class="p-4">
+<h5 class="font-medium">Pambıq Toxuma Yastıq</h5>
+<p class="text-gray-600 text-sm">69.99 AZN</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+`,
+          },
+        };
+        function showDetails(type) {
+          const modal = document.getElementById("detailsModal");
+          const title = document.getElementById("modalTitle");
+          const content = document.getElementById("modalContent");
+          title.textContent = productDetails[type].title;
+          content.innerHTML = productDetails[type].content;
+          modal.classList.remove("hidden");
+          modal.classList.add("flex");
+          document.body.style.overflow = "hidden";
+        }
+        function closeModal() {
+          const modal = document.getElementById("detailsModal");
+          modal.classList.add("hidden");
+          modal.classList.remove("flex");
+          document.body.style.overflow = "";
+        }
+      </script>
+      <section class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <h2 class="text-3xl font-bold mb-6">Bizimlə Əlaqə</h2>
+              <p class="text-gray-600 mb-8">
+                Suallarınız və ya təklifləriniz üçün bizimlə əlaqə saxlayın.
+                Sizə ən qısa zamanda cavab verəcəyik.
+              </p>
+              <form id="contactForm" class="space-y-6">
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-2"
+                    >Ad Soyad</label
+                  >
+                  <input
+                    type="text"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                    required
+                  />
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-2"
+                    >E-poçt</label
+                  >
+                  <input
+                    type="email"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                    required
+                  />
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-2"
+                    >Mesaj</label
+                  >
+                  <textarea
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent h-32"
+                    required
+                  ></textarea>
+                </div>
+                <button
+                  type="submit"
+                  class="w-full bg-primary text-white py-3 !rounded-button hover:bg-primary/90 transition-colors"
+                >
+                  Göndər
+                </button>
+              </form>
+            </div>
+            <div class="relative h-[600px] rounded-xl overflow-hidden">
+              <img
+                src="https://public.readdy.ai/ai/img_res/bd391e02fd429035338de61c33c5b59d.jpg"
+                alt="Contact"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="bg-gray-900 text-white py-12">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+          <div>
+            <span class="text-2xl font-['Pacifico'] text-primary mb-4 block"
+              >logo</span
+            >
+            <p class="text-gray-400">Eviniz üçün ən yaxşı dekorativ həllər</p>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Əlaqə</h3>
+            <div class="space-y-2 text-gray-400">
+              <p>Bakı şəhəri, Nizami küçəsi 5</p>
+              <p>+994 50 123 45 67</p>
+              <p>info@dekorativ.az</p>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Sosial Media</h3>
+            <div class="flex space-x-4">
+              <a href="#" class="text-gray-400 hover:text-primary">
+                <i class="ri-facebook-fill ri-lg"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-primary">
+                <i class="ri-instagram-fill ri-lg"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-primary">
+                <i class="ri-pinterest-fill ri-lg"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div
+          class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400"
+        >
+          <p>&copy; 2025 Dekorativ. Bütün hüquqlar qorunur.</p>
+        </div>
+      </div>
+    </footer>
+    <script>
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          const formData = new FormData(e.target);
+          console.log("Form submitted:", Object.fromEntries(formData));
+          const notification = document.createElement("div");
+          notification.className =
+            "fixed bottom-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg slide-in";
+          notification.textContent = "Mesajınız uğurla göndərildi!";
+          document.body.appendChild(notification);
+          setTimeout(() => {
+            notification.remove();
+          }, 3000);
+          e.target.reset();
+        });
+      const cards = document.querySelectorAll(".feature-card");
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("slide-in");
+          }
+        });
+      });
+      cards.forEach((card) => observer.observe(card));
+      const menuBtn = document.getElementById("menuBtn");
+      const mobileMenu = document.getElementById("mobileMenu");
+      let isMenuOpen = false;
+      menuBtn.addEventListener("click", () => {
+        isMenuOpen = !isMenuOpen;
+        mobileMenu.classList.toggle("hidden");
+        menuBtn.innerHTML = isMenuOpen
+          ? '<i class="ri-close-line text-2xl"></i>'
+          : '<i class="ri-menu-line text-2xl"></i>';
+      });
+    </script>
+  </body>
+</html>
+.
