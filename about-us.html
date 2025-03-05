@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us - Decorative Construction</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Playfair+Display:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <style>
+      :where([class^="ri-"])::before {
+        content: "\f3c2";
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#2A4B6A",
+              secondary: "#C8A87D",
+            },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-white min-h-screen">
+    <header class="fixed w-full bg-white/95 backdrop-blur-sm z-50 shadow-sm">
+        <nav class="fixed w-full bg-white/90 backdrop-blur-sm z-50 shadow-sm">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                  <img
+                    style="height: 50px; width: 50px; object-fit: cover"
+                    src="./interplast.jpg"
+                  />
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                  <a href="home.html" class="text-gray-700 hover:text-primary">Ana Səhifə</a>
+                  <a href="products.html" class="text-gray-700 hover:text-primary"
+                    >Məhsullar</a
+                  >
+                  <a href="about-us.html" class="text-gray-700 hover:text-primary"
+                    >Haqqımızda</a
+                  >
+                  <a href="#" class="text-gray-700 hover:text-primary">Əlaqə</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                  <button id="menuBtn" class="text-gray-700 hover:text-primary">
+                    <i class="ri-menu-line text-2xl"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div id="mobileMenu" class="hidden md:hidden bg-white w-full border-t">
+              <div class="px-4 py-2 space-y-2">
+                <a href="#" class="block py-2 text-gray-700 hover:text-primary"
+                  >Ana Səhifə</a
+                >
+                <a href="#" class="block py-2 text-gray-700 hover:text-primary"
+                  >Məhsullar</a
+                >
+                <a href="#" class="block py-2 text-gray-700 hover:text-primary"
+                  >Haqqımızda</a
+                >
+                <a href="#" class="block py-2 text-gray-700 hover:text-primary"
+                  >Əlaqə</a
+                >
+              </div>
+            </div>
+          </nav>
+      </div>
+    </header>
+
+    <section
+      class="relative pt-24 min-h-[600px] flex items-center"
+      style="
+        background-image: url('https://public.readdy.ai/ai/img_res/be88eed52b5fc9147c4c2403f0e438fd.jpg');
+        background-size: cover;
+        background-position: center;
+      "
+    >
+      <div class="absolute inset-0 bg-black/40"></div>
+      <div class="container mx-auto px-6 relative z-10">
+        <div class="max-w-3xl text-white">
+          <h1 class="text-5xl font-['Playfair_Display'] font-bold mb-6">
+            2006-cı ildən bəri dekorativ məhsullar istehsal edirik.
+          </h1>
+          <p class="text-xl leading-relaxed">
+            Məkanları dəqiqlik, peşəkarlıq və misilsiz sənətkarlıqla
+            dəyişdiririk. İllərin təcrübəsi ilə ilham verən və uzunömürlü
+            mühitlər yaradırıq
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 bg-gray-50">
+      <div class="container mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2
+              class="text-4xl font-['Playfair_Display'] font-bold text-gray-900 mb-6"
+            >
+              Bizim Hekayəmiz
+            </h2>
+            <p class="text-gray-600 leading-relaxed mb-6">
+              2006-cı ildə qurulan interplast-A, dekorativ məhsullar
+              istehsalında yenilikçi dizayn və yüksək keyfiyyətli sənətkarlıqla
+              sektorda fərqlənmək məqsədi ilə fəaliyyətə başladı.
+            </p>
+            <p class="text-gray-600 leading-relaxed mb-6">
+              Son illər ərzində kiçik bir yerli istehsalçıdan geniş miqyaslı bir
+              şirkətə çevrilərək, ölkə daxilində minlərlə uğurlu layihəyə imza
+              atdıq. Keyfiyyətə, yeniliyə və müştəri məmnuniyyətinə sadiqliyimiz
+              bizə etibarlı tərəfdaş və nüfuzlu bir brend olma imkanı
+              qazandırdı.
+            </p>
+            <p class="text-gray-600 leading-relaxed">
+              Bu gün biz dekorativ məhsul istehsalında yeni standartlar müəyyən
+              edərək irəliləməyə davam edirik. İlk gündən bizi fərqləndirən
+              yüksək keyfiyyət və fərdi yanaşmanı qoruyub saxlayaraq
+              müştərilərimizə ilham verən məkanlar yaratmağa davam edirik.
+            </p>
+          </div>
+          <div>
+            <img
+              src="https://public.readdy.ai/ai/img_res/a0234908636c156606bbbd1bd5aeca27.jpg"
+              alt="Our Team"
+              class="rounded-lg shadow-xl w-full"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20">
+      <div class="container mx-auto px-6">
+        <h2
+          class="text-4xl font-['Playfair_Display'] font-bold text-center text-gray-900 mb-16"
+        >
+          Dəyərlərimiz
+        </h2>
+        <div class="grid md:grid-cols-4 gap-8">
+          <div
+            class="text-center p-6 hover:shadow-lg rounded-lg transition-all duration-300"
+          >
+            <div
+              class="w-16 h-16 mx-auto mb-6 text-primary flex items-center justify-center"
+            >
+              <i class="ri-shield-star-line ri-2x"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-4">Mükəmməllik</h3>
+            <p class="text-gray-600">
+              Hər layihədə yüksək keyfiyyəti təmin edərək gözləntiləri daim
+              aşmaq.
+            </p>
+          </div>
+          <div
+            class="text-center p-6 hover:shadow-lg rounded-lg transition-all duration-300"
+          >
+            <div
+              class="w-16 h-16 mx-auto mb-6 text-primary flex items-center justify-center"
+            >
+              <i class="ri-heart-line ri-2x"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-4">Dürüstlük</h3>
+            <p class="text-gray-600">
+              Bütün fəaliyyətlərimizdə şəffaflıq, etibar və etik prinsiplərə
+              sadiq qalmaq.
+            </p>
+          </div>
+          <div
+            class="text-center p-6 hover:shadow-lg rounded-lg transition-all duration-300"
+          >
+            <div
+              class="w-16 h-16 mx-auto mb-6 text-primary flex items-center justify-center"
+            >
+              <i class="ri-team-line ri-2x"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-4">Əməkdaşlıq</h3>
+            <p class="text-gray-600">
+              Müştərilər və tərəfdaşlarla birgə işləyərək uğuru bölüşmək.
+            </p>
+          </div>
+          <div
+            class="text-center p-6 hover:shadow-lg rounded-lg transition-all duration-300"
+          >
+            <div
+              class="w-16 h-16 mx-auto mb-6 text-primary flex items-center justify-center"
+            >
+              <i class="ri-leaf-line ri-2x"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-4">Yenilik</h3>
+            <p class="text-gray-600">
+              Daha yaxşı nəticələr əldə etmək üçün yeni texnologiyaları və
+              metodları tətbiq etmək.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 bg-primary text-white">
+      <div class="container mx-auto px-6">
+        <div class="grid md:grid-cols-3 gap-8 text-center">
+          <div>
+            <div class="text-4xl font-bold mb-2" id="yearsCount">19</div>
+            <p class="text-lg">İllik Təcrübə</p>
+          </div>
+          <div>
+            <div class="text-4xl font-bold mb-2" id="projectsCount">5000+</div>
+            <p class="text-lg">Uğurla Tamamlanmış Layihə</p>
+          </div>
+          <div>
+            <div class="text-4xl font-bold mb-2" id="clientsCount">3500</div>
+            <p class="text-lg">Məmnun Müştərilərimiz</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- <section class="py-20 bg-primary text-white">
+      <div class="container mx-auto px-6 text-center">
+        <h2 class="text-4xl font-['Playfair_Display'] font-bold mb-8">
+          Ready to Transform Your Space?
+        </h2>
+        <p class="text-xl mb-12 max-w-2xl mx-auto">
+          Let's discuss your vision and create something extraordinary together.
+        </p>
+        <button
+          class="bg-white text-primary px-8 py-3 !rounded-button text-lg font-semibold hover:bg-gray-100 transition-colors duration-300 cursor-pointer whitespace-nowrap"
+        >
+          Get Started
+        </button>
+      </div>
+    </section> -->
+
+    <!-- <footer class="bg-gray-900 text-white py-16">
+      <div class="container mx-auto px-6">
+        <div class="grid md:grid-cols-4 gap-12">
+          <div>
+            <a href="/" class="text-3xl font-['Pacifico'] text-white mb-6 block"
+              >logo</a
+            >
+            <p class="text-gray-400">
+              Transforming spaces with excellence since 1995.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-6">Quick Links</h3>
+            <ul class="space-y-4">
+              <li>
+                <a href="/about" class="text-gray-400 hover:text-white"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a href="/services" class="text-gray-400 hover:text-white"
+                  >Services</a
+                >
+              </li>
+              <li>
+                <a href="/projects" class="text-gray-400 hover:text-white"
+                  >Projects</a
+                >
+              </li>
+              <li>
+                <a href="/contact" class="text-gray-400 hover:text-white"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-6">Contact Info</h3>
+            <ul class="space-y-4 text-gray-400">
+              <li class="flex items-center gap-2">
+                <i class="ri-map-pin-line"></i>
+                <span>123 Construction Ave, New York, NY 10001</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="ri-phone-line"></i>
+                <span>(555) 123-4567</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="ri-mail-line"></i>
+                <span>info@decorativeconstruction.com</span>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-6">Newsletter</h3>
+            <p class="text-gray-400 mb-4">
+              Subscribe to our newsletter for updates and insights.
+            </p>
+            <form class="space-y-4">
+              <input
+                type="email"
+                placeholder="Your email"
+                class="w-full px-4 py-2 !rounded-button bg-gray-800 border-none text-white placeholder-gray-500"
+              />
+              <button
+                type="submit"
+                class="w-full bg-primary text-white px-4 py-2 !rounded-button hover:bg-primary/90 transition-colors duration-300 cursor-pointer whitespace-nowrap"
+              >
+                Subscribe
+              </button>
+            </form>
+          </div>
+        </div>
+        <div
+          class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400"
+        >
+          <p>&copy; 2025 Decorative Construction. All rights reserved.</p>
+        </div>
+      </div>
+    </footer> -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const counters = {
+          yearsCount: 19,
+          projectsCount: 5000,
+          clientsCount: 3500,
+          //   teamCount: 150,
+        };
+
+        for (let id in counters) {
+          const el = document.getElementById(id);
+          if (el) {
+            let current = 0;
+            const target = counters[id];
+            const increment = target / 50;
+            const timer = setInterval(() => {
+              current += increment;
+              if (current >= target) {
+                current = target;
+                clearInterval(timer);
+              }
+              el.textContent = Math.floor(current).toLocaleString();
+            }, 20);
+          }
+        }
+
+        const subscribeForm = document.querySelector("form");
+        if (subscribeForm) {
+          subscribeForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+            const email = this.querySelector('input[type="email"]').value;
+            if (email) {
+              const toast = document.createElement("div");
+              toast.className =
+                "fixed bottom-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg";
+              toast.textContent = "Thank you for subscribing!";
+              document.body.appendChild(toast);
+              setTimeout(() => toast.remove(), 3000);
+              this.reset();
+            }
+          });
+        }
+
+        const getStartedBtn = document.querySelector("button");
+        if (getStartedBtn) {
+          getStartedBtn.addEventListener("click", function () {
+            window.location.href = "/contact";
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

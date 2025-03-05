@@ -216,12 +216,12 @@ function getProductImageUrl(product) {
   if (product.image) {
     if (Array.isArray(product.image) && product.image.length > 0) {
       if (product.image[0].url) {
-        return `https://interplast.onrender.com/api/admin/file/get?fileKey=${product.image[0].url}`;
+        return `http://147.93.59.56:4000/api/admin/file/get?fileKey=${product.image[0].url}`;
       } else if (typeof product.image[0] === "string") {
-        return `https://interplast.onrender.com/api/admin/file/get?fileKey=${product.image[0]}`;
+        return `http://147.93.59.56:4000/api/admin/file/get?fileKey=${product.image[0]}`;
       }
     } else if (typeof product.image === "string") {
-      return `https://interplast.onrender.com/api/admin/file/get?fileKey=${product.image}`;
+      return `http://147.93.59.56:4000/api/admin/file/get?fileKey=${product.image}`;
     }
   }
   // Fallback to a placeholder image
@@ -297,7 +297,7 @@ function showProductDetails(product) {
 
 // Function to fetch and process products
 function fetchProducts() {
-  fetch("https://interplast.onrender.com/api/product/all", {
+  fetch("http://147.93.59.56:4000/api/product/all", {
     method: "GET",
   })
     .then((response) => {
@@ -423,7 +423,7 @@ let globalCategories = [];
 
 // Function to fetch and render categories
 function fetchAndRenderCategories() {
-  fetch("https://interplast.onrender.com/api/admin/category/all", {
+  fetch("http://147.93.59.56:4000/api/admin/category/all", {
     method: "GET",
   })
     .then((response) => {
@@ -477,7 +477,7 @@ function renderCategories(categories) {
       class="category-btn flex items-center gap-2 px-6 py-2 bg-primary text-white rounded-full whitespace-nowrap !rounded-button"
       data-category="all"
     >
-      All
+      Bütün Məhsullar
     </button>
   `;
 
