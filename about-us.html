@@ -11,13 +11,29 @@
       href="https://fonts.googleapis.com/css2?family=Pacifico&family=Playfair+Display:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+
     <link
-      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
-      rel="stylesheet"
-    />
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+    rel="stylesheet"
+  />
+    <link rel="stylesheet" href="./assets/css/navbar.css">
     <style>
       :where([class^="ri-"])::before {
         content: "\f3c2";
+      }
+
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .slide-in {
+        animation: slideIn 0.5s ease forwards;
       }
     </style>
     <script>
@@ -53,18 +69,14 @@
                 <div class="flex items-center">
                   <img
                     style="height: 50px; width: 50px; object-fit: cover"
-                    src="./interplast.jpg"
+                    src="./interplast.png"
                   />
                 </div>
                 <div class="hidden md:flex items-center space-x-8">
-                  <a href="home.html" class="text-gray-700 hover:text-primary">Ana Səhifə</a>
-                  <a href="products.html" class="text-gray-700 hover:text-primary"
-                    >Məhsullar</a
-                  >
-                  <a href="about-us.html" class="text-gray-700 hover:text-primary"
-                    >Haqqımızda</a
-                  >
-                  <a href="#" class="text-gray-700 hover:text-primary">Əlaqə</a>
+                  <a href="/" class="text-gray-700 hover:text-primary nav-link">Ana Səhifə</a>
+                  <a href="/products" class="text-gray-700 hover:text-primary nav-link">Məhsullar</a>
+                  <a href="/about-us" class="text-gray-700 hover:text-primary nav-link active">Haqqımızda</a>
+                  <a href="/#contact" class="text-gray-700 hover:text-primary nav-link">Əlaqə</a>
                 </div>
                 <div class="md:hidden flex items-center">
                   <button id="menuBtn" class="text-gray-700 hover:text-primary">
@@ -75,16 +87,22 @@
             </div>
             <div id="mobileMenu" class="hidden md:hidden bg-white w-full border-t">
               <div class="px-4 py-2 space-y-2">
-                <a href="#" class="block py-2 text-gray-700 hover:text-primary"
+                <a href="/" class="block py-2 text-gray-700 hover:text-primary"
                   >Ana Səhifə</a
                 >
-                <a href="#" class="block py-2 text-gray-700 hover:text-primary"
+                <a
+                  href="/products"
+                  class="block py-2 text-gray-700 hover:text-primary"
                   >Məhsullar</a
                 >
-                <a href="#" class="block py-2 text-gray-700 hover:text-primary"
+                <a
+                  href="/about-us"
+                  class="block py-2 text-gray-700 hover:text-primary"
                   >Haqqımızda</a
                 >
-                <a href="#" class="block py-2 text-gray-700 hover:text-primary"
+                <a
+                  href="/#contact"
+                  class="block py-2 text-gray-700 hover:text-primary"
                   >Əlaqə</a
                 >
               </div>
@@ -224,22 +242,55 @@
 
     <section class="py-20 bg-primary text-white">
       <div class="container mx-auto px-6">
-        <div class="grid md:grid-cols-3 gap-8 text-center">
+        <div class="grid md:grid-cols-1 gap-8 text-center">
           <div>
             <div class="text-4xl font-bold mb-2" id="yearsCount">19</div>
             <p class="text-lg">İllik Təcrübə</p>
           </div>
-          <div>
-            <div class="text-4xl font-bold mb-2" id="projectsCount">5000+</div>
-            <p class="text-lg">Uğurla Tamamlanmış Layihə</p>
-          </div>
-          <div>
-            <div class="text-4xl font-bold mb-2" id="clientsCount">3500</div>
-            <p class="text-lg">Məmnun Müştərilərimiz</p>
-          </div>
         </div>
       </div>
     </section>
+
+    <footer class="bg-gray-900 text-white py-12">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+          <div>
+            <img
+              style="height: 50px; width: 50px; object-fit: cover"
+              src="./interplast.png"
+            />
+            <p class="text-gray-400">Eviniz üçün ən yaxşı dekorativ həllər</p>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Əlaqə</h3>
+            <div class="space-y-2 text-gray-400">
+              <p>BAKI ŞƏHƏRİ, XƏZƏR RAYONU, QALA ŞTQ, QALA QƏSƏBƏSİ, BAKI-QALA YOLUNUN ŞƏRQİ</p>
+              <p>+994 50 123 45 67</p>
+              <p>info@interplast-a.com</p>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Sosial Media</h3>
+            <div class="flex space-x-4">
+              <a href="#" class="text-gray-400 hover:text-primary">
+                <i class="ri-facebook-fill ri-lg"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-primary">
+                <i class="ri-instagram-fill ri-lg"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-primary">
+                <i class="ri-pinterest-fill ri-lg"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div
+          class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400"
+        >
+          <p>&copy; 2025 Interplast-a. Bütün hüquqlar qorunur.</p>
+        </div>
+      </div>
+    </footer>
 
     <!-- <section class="py-20 bg-primary text-white">
       <div class="container mx-auto px-6 text-center">
@@ -258,6 +309,7 @@
     </section> -->
 
     <!-- <footer class="bg-gray-900 text-white py-16">
+
       <div class="container mx-auto px-6">
         <div class="grid md:grid-cols-4 gap-12">
           <div>
@@ -380,7 +432,7 @@
           });
         }
 
-        const getStartedBtn = document.querySelector("button");
+        const getStartedBtn = document.querySelector("button.bg-white");
         if (getStartedBtn) {
           getStartedBtn.addEventListener("click", function () {
             window.location.href = "/contact";
@@ -388,5 +440,7 @@
         }
       });
     </script>
+    <script src="./assets/js/menu.js"></script>
+    <script src="./assets/js/navbar.js"></script>
   </body>
 </html>

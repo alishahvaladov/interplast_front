@@ -15,6 +15,7 @@
       href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="./assets/css/navbar.css" />
     <style>
       :where([class^="ri-"])::before {
         content: "\f3c2";
@@ -58,30 +59,137 @@
     </script>
   </head>
   <body class="bg-white min-h-screen">
-    <div class="max-w-7xl mx-auto px-4 py-8">
-      <div class="flex items-center justify-between mb-8">
-        <h1 class="text-3xl font-semibold text-gray-900">Məhsullarımız</h1>
-        <div class="relative flex items-center w-96">
-          <div class="absolute left-3 w-5 h-5 flex items-center justify-center">
-            <i class="ri-search-line text-gray-400"></i>
+    <header>
+      <nav class="fixed w-full bg-white/90 backdrop-blur-sm z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex justify-between h-16">
+            <div class="flex items-center">
+              <img
+                style="height: 50px; width: 50px; object-fit: cover"
+                src="./interplast.png"
+              />
+            </div>
+            <div class="hidden md:flex items-center space-x-8">
+              <a href="/" class="text-gray-700 hover:text-primary nav-link"
+                >Ana Səhifə</a
+              >
+              <a
+                href="/products"
+                class="text-gray-700 hover:text-primary nav-link active"
+                >Məhsullar</a
+              >
+              <a
+                href="/about-us"
+                class="text-gray-700 hover:text-primary nav-link"
+                >Haqqımızda</a
+              >
+              <a
+                href="/#contact"
+                class="text-gray-700 hover:text-primary nav-link"
+                >Əlaqə</a
+              >
+            </div>
+            <div class="md:hidden flex items-center">
+              <button id="menuBtn" class="text-gray-700 hover:text-primary">
+                <i class="ri-menu-line text-2xl"></i>
+              </button>
+            </div>
           </div>
-          <input
-            type="text"
-            placeholder="Search products..."
-            class="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-full text-sm focus:outline-none focus:border-primary"
-          />
+        </div>
+        <div id="mobileMenu" class="hidden md:hidden bg-white w-full border-t">
+          <div class="px-4 py-2 space-y-2">
+            <a href="/" class="block py-2 text-gray-700 hover:text-primary"
+              >Ana Səhifə</a
+            >
+            <a
+              href="/products"
+              class="block py-2 text-gray-700 hover:text-primary"
+              >Məhsullar</a
+            >
+            <a
+              href="/about-us"
+              class="block py-2 text-gray-700 hover:text-primary"
+              >Haqqımızda</a
+            >
+            <a
+              href="/#contact"
+              class="block py-2 text-gray-700 hover:text-primary"
+              >Əlaqə</a
+            >
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div class="max-w-7xl mx-auto px-4 py-8 pt-24">
+        <div class="flex items-center justify-between mb-8">
+          <h1 class="text-3xl font-semibold text-gray-900">Məhsullarımız</h1>
+          <div class="relative flex items-center w-96">
+            <div
+              class="absolute left-3 w-5 h-5 flex items-center justify-center"
+            >
+              <i class="ri-search-line text-gray-400"></i>
+            </div>
+            <input
+              type="text"
+              placeholder="Məhsul axtar..."
+              class="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-full text-sm focus:outline-none focus:border-primary"
+            />
+          </div>
+        </div>
+        <div
+          id="productContainer"
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+        ></div>
+      </div>
+    </main>
+
+    <footer class="bg-gray-900 text-white py-12">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+          <div>
+            <img
+              style="height: 50px; width: 50px; object-fit: cover"
+              src="./interplast.png"
+            />
+            <p class="text-gray-400">Eviniz üçün ən yaxşı dekorativ həllər</p>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Əlaqə</h3>
+            <div class="space-y-2 text-gray-400">
+              <p>
+                BAKI ŞƏHƏRİ, XƏZƏR RAYONU, QALA ŞTQ, QALA QƏSƏBƏSİ, BAKI-QALA
+                YOLUNUN ŞƏRQİ
+              </p>
+              <p>+994 50 123 45 67</p>
+              <p>info@interplast-a.com</p>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Sosial Media</h3>
+            <div class="flex space-x-4">
+              <a href="#" class="text-gray-400 hover:text-primary">
+                <i class="ri-facebook-fill ri-lg"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-primary">
+                <i class="ri-instagram-fill ri-lg"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-primary">
+                <i class="ri-pinterest-fill ri-lg"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div
+          class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400"
+        >
+          <p>&copy; 2025 Interplast-a. Bütün hüquqlar qorunur.</p>
         </div>
       </div>
-      <div
-        class="flex gap-4 overflow-x-auto pb-4 mb-8 scrollbar-hide"
-        id="categoryContainer"
-      ></div>
-      <div
-        id="productContainer"
-        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
-      ></div>
-    </div>
+    </footer>
 
     <script src="./assets/js/product.js"></script>
+    <script src="./assets/js/navbar.js"></script>
+    <script src="./assets/js/menu.js"></script>
   </body>
 </html>

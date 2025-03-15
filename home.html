@@ -15,6 +15,7 @@
       href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="./assets/css/navbar.css" />
     <style>
       :where([class^="ri-"])::before {
         content: "\f3c2";
@@ -65,18 +66,28 @@
           <div class="flex items-center">
             <img
               style="height: 50px; width: 50px; object-fit: cover"
-              src="./interplast.jpg"
+              src="./interplast.png"
             />
           </div>
           <div class="hidden md:flex items-center space-x-8">
-            <a href="#" class="text-gray-700 hover:text-primary">Ana Səhifə</a>
-            <a href="products.html" class="text-gray-700 hover:text-primary"
+            <a href="/" class="text-gray-700 hover:text-primary nav-link active"
+              >Ana Səhifə</a
+            >
+            <a
+              href="/products"
+              class="text-gray-700 hover:text-primary nav-link"
               >Məhsullar</a
             >
-            <a href="./about-us.html" class="text-gray-700 hover:text-primary"
+            <a
+              href="/about-us"
+              class="text-gray-700 hover:text-primary nav-link"
               >Haqqımızda</a
             >
-            <a href="#" class="text-gray-700 hover:text-primary">Əlaqə</a>
+            <a
+              href="/#contact"
+              class="text-gray-700 hover:text-primary nav-link"
+              >Əlaqə</a
+            >
           </div>
           <div class="md:hidden flex items-center">
             <button id="menuBtn" class="text-gray-700 hover:text-primary">
@@ -87,16 +98,22 @@
       </div>
       <div id="mobileMenu" class="hidden md:hidden bg-white w-full border-t">
         <div class="px-4 py-2 space-y-2">
-          <a href="#" class="block py-2 text-gray-700 hover:text-primary"
+          <a href="/" class="block py-2 text-gray-700 hover:text-primary"
             >Ana Səhifə</a
           >
-          <a href="#" class="block py-2 text-gray-700 hover:text-primary"
+          <a
+            href="/products"
+            class="block py-2 text-gray-700 hover:text-primary"
             >Məhsullar</a
           >
-          <a href="#" class="block py-2 text-gray-700 hover:text-primary"
+          <a
+            href="/about-us"
+            class="block py-2 text-gray-700 hover:text-primary"
             >Haqqımızda</a
           >
-          <a href="#" class="block py-2 text-gray-700 hover:text-primary"
+          <a
+            href="/#contact"
+            class="block py-2 text-gray-700 hover:text-primary"
             >Əlaqə</a
           >
         </div>
@@ -119,11 +136,12 @@
               Həyatınıza zəriflik və stil qatın. Yüksək keyfiyyətli dekorativ
               məhsullarımızla məkanınızı dəyişdirin.
             </p>
-            <button
+            <a
+              href="/products"
               class="bg-primary text-white px-8 py-3 !rounded-button hover:bg-primary/90 transition-colors"
             >
               İndi Kəşf Edin
-            </button>
+            </a>
           </div>
         </div>
       </section>
@@ -186,8 +204,8 @@
             >
               <div class="relative">
                 <img
-                  src="https://public.readdy.ai/ai/img_res/d1163e37f64cb143100ce4bf10eba999.jpg"
-                  alt="Vazalar"
+                  src="./assets/img/lambir.webp"
+                  alt="Lambirlər"
                   class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
                 />
                 <div
@@ -202,8 +220,7 @@
                 </div>
               </div>
               <div class="p-6">
-                <h3 class="text-xl font-semibold mb-2">Vazalar</h3>
-                <p class="text-gray-600">Müasir və klassik dizaynda vazalar</p>
+                <h3 class="text-xl font-semibold mb-2">Lambirlər</h3>
               </div>
             </div>
             <div
@@ -211,8 +228,8 @@
             >
               <div class="relative">
                 <img
-                  src="https://public.readdy.ai/ai/img_res/46b15cd6b7048349a3e16dc121381939.jpg"
-                  alt="Divar Dekorları"
+                  src="./assets/img/pencere-altliqlari.webp"
+                  alt="Pəncərə Altlıqları"
                   class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
                 />
                 <div
@@ -227,10 +244,7 @@
                 </div>
               </div>
               <div class="p-6">
-                <h3 class="text-xl font-semibold mb-2">Divar Dekorları</h3>
-                <p class="text-gray-600">
-                  Divarlarınız üçün bənzərsiz aksesuarlar
-                </p>
+                <h3 class="text-xl font-semibold mb-2">Pəncərə Altlıqları</h3>
               </div>
             </div>
             <div
@@ -238,9 +252,9 @@
             >
               <div class="relative">
                 <img
-                  src="https://public.readdy.ai/ai/img_res/088489bf87c89e7b6a555fe4c4727d39.jpg"
-                  alt="Yastıqlar"
-                  class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
+                  src="./assets/img/panel.webp"
+                  alt="Panellər"
+                  class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105 object-top"
                 />
                 <div
                   class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center"
@@ -254,8 +268,7 @@
                 </div>
               </div>
               <div class="p-6">
-                <h3 class="text-xl font-semibold mb-2">Yastıqlar</h3>
-                <p class="text-gray-600">Rahat və dekorativ yastıqlar</p>
+                <h3 class="text-xl font-semibold mb-2">Panellər</h3>
               </div>
             </div>
           </div>
@@ -475,7 +488,7 @@
       <section class="py-24 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4">
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
+            <div id="contact">
               <h2 class="text-3xl font-bold mb-6">Bizimlə Əlaqə</h2>
               <p class="text-gray-600 mb-8">
                 Suallarınız və ya təklifləriniz üçün bizimlə əlaqə saxlayın.
@@ -544,17 +557,21 @@
       <div class="max-w-7xl mx-auto px-4">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
           <div>
-            <span class="text-2xl font-['Pacifico'] text-primary mb-4 block"
-              >logo</span
-            >
+            <img
+              style="height: 50px; width: 50px; object-fit: cover"
+              src="./interplast.png"
+            />
             <p class="text-gray-400">Eviniz üçün ən yaxşı dekorativ həllər</p>
           </div>
           <div>
             <h3 class="text-lg font-semibold mb-4">Əlaqə</h3>
             <div class="space-y-2 text-gray-400">
-              <p>Bakı şəhəri, Nizami küçəsi 5</p>
+              <p>
+                BAKI ŞƏHƏRİ, XƏZƏR RAYONU, QALA ŞTQ, QALA QƏSƏBƏSİ, BAKI-QALA
+                YOLUNUN ŞƏRQİ
+              </p>
               <p>+994 50 123 45 67</p>
-              <p>info@dekorativ.az</p>
+              <p>info@interplast-a.com</p>
             </div>
           </div>
           <div>
@@ -575,7 +592,7 @@
         <div
           class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400"
         >
-          <p>&copy; 2025 Dekorativ. Bütün hüquqlar qorunur.</p>
+          <p>&copy; 2025 Interplast-a. Bütün hüquqlar qorunur.</p>
         </div>
       </div>
     </footer>
@@ -589,17 +606,10 @@
         });
       });
       cards.forEach((card) => observer.observe(card));
-      const menuBtn = document.getElementById("menuBtn");
-      const mobileMenu = document.getElementById("mobileMenu");
-      let isMenuOpen = false;
-      menuBtn.addEventListener("click", () => {
-        isMenuOpen = !isMenuOpen;
-        mobileMenu.classList.toggle("hidden");
-        menuBtn.innerHTML = isMenuOpen
-          ? '<i class="ri-close-line text-2xl"></i>'
-          : '<i class="ri-menu-line text-2xl"></i>';
-      });
     </script>
+    <script defer src="/_vercel/insights/script.js"></script>
     <script src="./assets/js/contact.js"></script>
+    <script src="./assets/js/navbar.js"></script>
+    <script src="./assets/js/menu.js"></script>
   </body>
 </html>

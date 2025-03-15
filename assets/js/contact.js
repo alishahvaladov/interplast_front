@@ -209,7 +209,7 @@ function clearFormErrors(form) {
 function submitContactRequest(formData) {
   console.log("Submitting data to API:", formData);
 
-  return fetch("http://147.93.59.56:4000/api/contact-requests", {
+  return fetch("https://api.interplast-a.com/api/contact-requests", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

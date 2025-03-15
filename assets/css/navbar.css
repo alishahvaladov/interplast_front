@@ -1,0 +1,55 @@
+/* Navbar styles with animations */
+
+/* Nav link with underline animation */
+.nav-link {
+  position: relative;
+  padding-bottom: 2px;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: currentColor;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* Dropdown animation */
+.dropdown-container {
+  position: relative;
+}
+
+.dropdown {
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+  transform-origin: top center;
+}
+
+.dropdown-container:hover .dropdown {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+}
+
+/* Mobile menu animation */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mobile-menu-active {
+  animation: slideDown 0.3s ease forwards;
+}
