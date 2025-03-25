@@ -24,27 +24,24 @@ function renderProducts(data) {
                     <div class="aspect-[6/5] relative product-card-slider">
                         ${
                           images.length > 1
-                            ? `<div class="product-slider-container h-full relative">
+                            ? `
+                          <div class="product-card-slider relative h-full overflow-hidden group">
                             ${images
                               .map(
                                 (img, index) => `
-                              <div class="product-slide absolute inset-0 transition-opacity duration-500 ${
-                                index === 0 ? "opacity-100" : "opacity-0"
+                              <div class="product-slide absolute inset-0 transition-opacity duration-300 ${
+                                index === 0
+                                  ? "opacity-100 z-10"
+                                  : "opacity-0 z-0"
                               }" data-index="${index}">
                                 <img src="${img}" alt="${
                                   product.name || product.title || "Product"
-                                } image ${
-                                  index + 1
-                                }" class="w-full h-full object-cover">
+                                }" class="w-full h-full object-cover transition-transform duration-300 transform group-hover:scale-110">
                               </div>
                             `
                               )
                               .join("")}
-                          </div>
-                          ${
-                            images.length > 1
-                              ? `
-                            <div class="absolute bottom-2 left-0 right-0 flex justify-center space-x-1 z-10">
+                            <div class="absolute bottom-2 left-0 right-0 flex justify-center space-x-1 z-20">
                               ${images
                                 .map(
                                   (_, index) => `
@@ -55,18 +52,19 @@ function renderProducts(data) {
                                 )
                                 .join("")}
                             </div>
-                            <button class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 hover:bg-opacity-80 rounded-full p-1 text-gray-800 card-prev-slide">
+                            <button class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 hover:bg-opacity-80 rounded-full p-1 text-gray-800 card-prev-slide z-20">
                               <i class="ri-arrow-left-s-line"></i>
                             </button>
-                            <button class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 hover:bg-opacity-80 rounded-full p-1 text-gray-800 card-next-slide">
+                            <button class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 hover:bg-opacity-80 rounded-full p-1 text-gray-800 card-next-slide z-20">
                               <i class="ri-arrow-right-s-line"></i>
                             </button>
+                          </div>
                           `
-                              : ""
-                          }`
-                            : `<img src="${images[0]}" alt="${
+                            : `<div class="w-full h-full overflow-hidden group">
+                                <img src="${images[0]}" alt="${
                                 product.name || product.title || "Product"
-                              }" class="w-full h-full object-cover">`
+                              }" class="w-full h-full object-cover transition-transform duration-300 transform group-hover:scale-110">
+                               </div>`
                         }
                     </div>
                     <div class="p-6">
@@ -404,16 +402,24 @@ function initProductCardSliders() {
     let currentIndex = 0;
 
     const showSlide = (index) => {
-      slides.forEach((slide) => slide.classList.add("opacity-0"));
-      slides[index].classList.remove("opacity-0");
-      slides[index].classList.add("opacity-100");
+      // Hide all slides
+      slides.forEach((slide) => {
+        slide.classList.remove("opacity-100", "z-10");
+        slide.classList.add("opacity-0", "z-0");
+      });
 
+      // Show the target slide
+      slides[index].classList.remove("opacity-0", "z-0");
+      slides[index].classList.add("opacity-100", "z-10");
+
+      // Update dots
       dots.forEach((dot) => dot.classList.remove("bg-opacity-100"));
       dots[index].classList.add("bg-opacity-100");
     };
 
     if (prevBtn) {
       prevBtn.addEventListener("click", (e) => {
+        e.preventDefault();
         e.stopPropagation();
         currentIndex = (currentIndex - 1 + slides.length) % slides.length;
         showSlide(currentIndex);
@@ -422,6 +428,7 @@ function initProductCardSliders() {
 
     if (nextBtn) {
       nextBtn.addEventListener("click", (e) => {
+        e.preventDefault();
         e.stopPropagation();
         currentIndex = (currentIndex + 1) % slides.length;
         showSlide(currentIndex);
@@ -430,6 +437,7 @@ function initProductCardSliders() {
 
     dots.forEach((dot, index) => {
       dot.addEventListener("click", (e) => {
+        e.preventDefault();
         e.stopPropagation();
         currentIndex = index;
         showSlide(currentIndex);
