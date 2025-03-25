@@ -91,7 +91,7 @@ function fetchProductsByCategory(categoryId) {
       }
 
       // Render the products
-      renderCategoryProducts(products);
+      renderProducts(products);
     })
     .catch((error) => {
       console.error("Error fetching products for category:", error);
@@ -144,89 +144,73 @@ function updateCategoryHeader(category) {
  * Render products in the category page
  * @param {Array} products - The array of products to render
  */
-function renderCategoryProducts(products) {
-  const container = document.querySelector(".grid.grid-cols-1");
+function renderProducts(products) {
+  const container = document.querySelector(".grid");
+  if (!container) return;
 
-  if (!container) {
-    console.error("Product container not found");
-    return;
-  }
-
-  if (!products || !Array.isArray(products) || products.length === 0) {
-    container.innerHTML =
-      '<div class="col-span-full text-center p-8"><p>Bu kateqoriyada məhsul tapılmadı</p></div>';
-    return;
-  }
-
-  // Clear existing content
-  container.innerHTML = "";
-
-  // Add each product
-  products.forEach((product) => {
-    const productElement = document.createElement("div");
-    productElement.className =
-      "bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300";
-
-    // Get all product images
-    const images = getProductImageUrls(product);
-
-    productElement.innerHTML = `
-      <div class="aspect-[6/5] relative product-card-slider">
-        ${
-          images.length > 1
-            ? `<div class="product-slider-container h-full relative">
-            ${images
-              .map(
-                (img, index) => `
-              <div class="product-slide absolute inset-0 transition-opacity duration-500 ${
-                index === 0 ? "opacity-100" : "opacity-0"
-              }" data-index="${index}">
-                <img src="${img}" alt="${
-                  product.name || product.title || "Product"
-                } image ${index + 1}" class="w-full h-full object-cover">
+  container.innerHTML = products
+    .map((product) => {
+      const images = getProductImageUrls(product);
+      return `
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow group cursor-pointer">
+          <div class="relative h-[300px] overflow-hidden">
+            ${
+              images.length > 1
+                ? `
+              <div class="product-card-slider relative h-full overflow-hidden group">
+                ${images
+                  .map(
+                    (img, index) => `
+                  <div class="product-slide absolute inset-0 transition-opacity duration-300 ${
+                    index === 0 ? "opacity-100 z-10" : "opacity-0 z-0"
+                  }" data-index="${index}">
+                    <img src="${img}" alt="${
+                      product.name || product.title || "Product"
+                    }" class="w-full h-full object-cover transition-transform duration-300 transform group-hover:scale-110">
+                  </div>
+                `
+                  )
+                  .join("")}
+                <div class="absolute bottom-2 left-0 right-0 flex justify-center space-x-1 z-20">
+                  ${images
+                    .map(
+                      (_, index) => `
+                    <button class="w-2 h-2 rounded-full bg-white bg-opacity-60 hover:bg-opacity-100 transition-all ${
+                      index === 0 ? "bg-opacity-100" : ""
+                    }" data-card-slide-index="${index}"></button>
+                  `
+                    )
+                    .join("")}
+                </div>
+                <button class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 hover:bg-opacity-80 rounded-full p-1 text-gray-800 card-prev-slide z-20">
+                  <i class="ri-arrow-left-s-line"></i>
+                </button>
+                <button class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 hover:bg-opacity-80 rounded-full p-1 text-gray-800 card-next-slide z-20">
+                  <i class="ri-arrow-right-s-line"></i>
+                </button>
               </div>
-            `
-              )
-              .join("")}
-          </div>
-          ${
-            images.length > 1
-              ? `
-            <div class="absolute bottom-2 left-0 right-0 flex justify-center space-x-1 z-10">
-              ${images
-                .map(
-                  (_, index) => `
-                <button class="w-2 h-2 rounded-full bg-white bg-opacity-60 hover:bg-opacity-100 transition-all ${
-                  index === 0 ? "bg-opacity-100" : ""
-                }" data-card-slide-index="${index}"></button>
               `
-                )
-                .join("")}
-            </div>
-            <button class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 hover:bg-opacity-80 rounded-full p-1 text-gray-800 card-prev-slide">
-              <i class="ri-arrow-left-s-line"></i>
-            </button>
-            <button class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 hover:bg-opacity-80 rounded-full p-1 text-gray-800 card-next-slide">
-              <i class="ri-arrow-right-s-line"></i>
-            </button>
-          `
-              : ""
-          }`
-            : `<img src="${images[0]}" alt="${
-                product.name || product.title || "Product"
-              }" class="w-full h-full object-cover">`
-        }
-      </div>
-      <div class="p-6">
-        <h3 class="text-xl font-semibold mb-3">${
-          product.name || product.title || "Product"
-        }</h3>
-        <p class="text-gray-600">${product.description || ""}</p>
-      </div>
-    `;
+                : `<div class="w-full h-full overflow-hidden group">
+                    <img src="${images[0]}" alt="${
+                    product.name || product.title || "Product"
+                  }" class="w-full h-full object-cover transition-transform duration-300 transform group-hover:scale-110">
+                   </div>`
+            }
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-3">${
+              product.name || product.title || "Product"
+            }</h3>
+            <p class="text-gray-600">${product.description || ""}</p>
+          </div>
+        </div>
+      `;
+    })
+    .join("");
 
-    // Add click event to the product
-    productElement.addEventListener("click", (e) => {
+  // Add click event to all products
+  document.querySelectorAll(".grid > div").forEach((productEl) => {
+    productEl.addEventListener("click", function (e) {
       // Don't trigger modal if clicking slider controls
       if (
         e.target.closest(".card-prev-slide") ||
@@ -237,13 +221,15 @@ function renderCategoryProducts(products) {
         return;
       }
 
-      showProductDetails(product);
+      // Find the index of this product
+      const index = Array.from(container.children).indexOf(this);
+      if (index !== -1 && products[index]) {
+        showProductDetails(products[index]);
+      }
     });
-
-    container.appendChild(productElement);
   });
 
-  // Initialize sliders on product cards
+  // Initialize product card sliders
   initProductCardSliders();
 }
 
@@ -262,16 +248,24 @@ function initProductCardSliders() {
     let currentIndex = 0;
 
     const showSlide = (index) => {
-      slides.forEach((slide) => slide.classList.add("opacity-0"));
-      slides[index].classList.remove("opacity-0");
-      slides[index].classList.add("opacity-100");
+      // Hide all slides
+      slides.forEach((slide) => {
+        slide.classList.remove("opacity-100", "z-10");
+        slide.classList.add("opacity-0", "z-0");
+      });
 
+      // Show the target slide
+      slides[index].classList.remove("opacity-0", "z-0");
+      slides[index].classList.add("opacity-100", "z-10");
+
+      // Update dots
       dots.forEach((dot) => dot.classList.remove("bg-opacity-100"));
       dots[index].classList.add("bg-opacity-100");
     };
 
     if (prevBtn) {
       prevBtn.addEventListener("click", (e) => {
+        e.preventDefault();
         e.stopPropagation();
         currentIndex = (currentIndex - 1 + slides.length) % slides.length;
         showSlide(currentIndex);
@@ -280,6 +274,7 @@ function initProductCardSliders() {
 
     if (nextBtn) {
       nextBtn.addEventListener("click", (e) => {
+        e.preventDefault();
         e.stopPropagation();
         currentIndex = (currentIndex + 1) % slides.length;
         showSlide(currentIndex);
@@ -288,6 +283,7 @@ function initProductCardSliders() {
 
     dots.forEach((dot, index) => {
       dot.addEventListener("click", (e) => {
+        e.preventDefault();
         e.stopPropagation();
         currentIndex = index;
         showSlide(currentIndex);
@@ -373,16 +369,16 @@ function showProductDetails(product) {
   if (images.length === 1) {
     // Just one image, no need for a slider
     imagesHtml = `
-      <div class="md:w-1/2">
+      <div class="md:w-1/2 h-[400px] md:h-[500px] flex items-center justify-center bg-white">
         <img src="${images[0]}" alt="${
       product.name || product.title || "Product"
-    }" class="w-full h-full object-contain">
+    }" class="max-w-full max-h-full object-contain">
       </div>
     `;
   } else {
     // Multiple images, create a slider
     imagesHtml = `
-      <div class="md:w-1/2 relative product-detail-slider">
+      <div class="md:w-1/2 h-[400px] md:h-[500px] relative product-detail-slider bg-white">
         <div class="product-slider-container h-full relative">
           ${images
             .map(
@@ -390,9 +386,13 @@ function showProductDetails(product) {
             <div class="product-slide absolute inset-0 transition-opacity duration-500 ${
               index === 0 ? "opacity-100" : "opacity-0"
             }" data-index="${index}">
-              <img src="${img}" alt="${
+              <div class="h-full flex items-center justify-center">
+                <img src="${img}" alt="${
                 product.name || product.title || "Product"
-              } image ${index + 1}" class="w-full h-full object-contain">
+              } image ${
+                index + 1
+              }" class="max-w-full max-h-full object-contain">
+              </div>
             </div>
           `
             )

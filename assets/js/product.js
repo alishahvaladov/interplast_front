@@ -1,82 +1,64 @@
-function renderProducts(data) {
+function renderProducts(products) {
   const container = document.getElementById("productContainer");
+  if (!container) return;
 
-  if (!data || !Array.isArray(data) || data.length === 0) {
-    container.innerHTML =
-      '<p class="text-center p-4">No products available</p>';
-    return;
-  }
-
-  container.innerHTML = data
+  container.innerHTML = products
     .map((product) => {
-      // Determine the category identifier to use
-      const categoryId = product.categoryId || "";
-      const categoryName = product.categoryName || "";
-
-      // Get all product images
       const images = getProductImageUrls(product);
-
       return `
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300" 
-                     data-category="${categoryId}" 
-                     data-category-name="${categoryName}"
-                     data-parent-category="${product.parentCategoryId || ""}">
-                    <div class="aspect-[6/5] relative product-card-slider">
-                        ${
-                          images.length > 1
-                            ? `
-                          <div class="product-card-slider relative h-full overflow-hidden group">
-                            ${images
-                              .map(
-                                (img, index) => `
-                              <div class="product-slide absolute inset-0 transition-opacity duration-300 ${
-                                index === 0
-                                  ? "opacity-100 z-10"
-                                  : "opacity-0 z-0"
-                              }" data-index="${index}">
-                                <img src="${img}" alt="${
-                                  product.name || product.title || "Product"
-                                }" class="w-full h-full object-cover transition-transform duration-300 transform group-hover:scale-110">
-                              </div>
-                            `
-                              )
-                              .join("")}
-                            <div class="absolute bottom-2 left-0 right-0 flex justify-center space-x-1 z-20">
-                              ${images
-                                .map(
-                                  (_, index) => `
-                                <button class="w-2 h-2 rounded-full bg-white bg-opacity-60 hover:bg-opacity-100 transition-all ${
-                                  index === 0 ? "bg-opacity-100" : ""
-                                }" data-card-slide-index="${index}"></button>
-                              `
-                                )
-                                .join("")}
-                            </div>
-                            <button class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 hover:bg-opacity-80 rounded-full p-1 text-gray-800 card-prev-slide z-20">
-                              <i class="ri-arrow-left-s-line"></i>
-                            </button>
-                            <button class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 hover:bg-opacity-80 rounded-full p-1 text-gray-800 card-next-slide z-20">
-                              <i class="ri-arrow-right-s-line"></i>
-                            </button>
-                          </div>
-                          `
-                            : `<div class="w-full h-full overflow-hidden group">
-                                <img src="${images[0]}" alt="${
-                                product.name || product.title || "Product"
-                              }" class="w-full h-full object-cover transition-transform duration-300 transform group-hover:scale-110">
-                               </div>`
-                        }
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-3">${
-                          product.name || product.title || "Product"
-                        }</h3>
-                        <p class="text-gray-600">${
-                          product.description || ""
-                        }</p>
-                    </div>
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow group cursor-pointer">
+          <div class="aspect-[6/5] relative overflow-hidden">
+            ${
+              images.length > 1
+                ? `
+              <div class="product-card-slider relative h-full overflow-hidden group">
+                ${images
+                  .map(
+                    (img, index) => `
+                  <div class="product-slide absolute inset-0 transition-opacity duration-300 ${
+                    index === 0 ? "opacity-100 z-10" : "opacity-0 z-0"
+                  }" data-index="${index}">
+                    <img src="${img}" alt="${
+                      product.name || product.title || "Product"
+                    }" class="w-full h-full object-cover transition-transform duration-300 transform group-hover:scale-110">
+                  </div>
+                `
+                  )
+                  .join("")}
+                <div class="absolute bottom-2 left-0 right-0 flex justify-center space-x-1 z-20">
+                  ${images
+                    .map(
+                      (_, index) => `
+                    <button class="w-2 h-2 rounded-full bg-white bg-opacity-60 hover:bg-opacity-100 transition-all ${
+                      index === 0 ? "bg-opacity-100" : ""
+                    }" data-card-slide-index="${index}"></button>
+                  `
+                    )
+                    .join("")}
                 </div>
-            `;
+                <button class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 hover:bg-opacity-80 rounded-full p-1 text-gray-800 card-prev-slide z-20">
+                  <i class="ri-arrow-left-s-line"></i>
+                </button>
+                <button class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 hover:bg-opacity-80 rounded-full p-1 text-gray-800 card-next-slide z-20">
+                  <i class="ri-arrow-right-s-line"></i>
+                </button>
+              </div>
+              `
+                : `<div class="w-full h-full overflow-hidden group">
+                    <img src="${images[0]}" alt="${
+                    product.name || product.title || "Product"
+                  }" class="w-full h-full object-cover transition-transform duration-300 transform group-hover:scale-110">
+                   </div>`
+            }
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-3">${
+              product.name || product.title || "Product"
+            }</h3>
+            <p class="text-gray-600">${product.description || ""}</p>
+          </div>
+        </div>
+      `;
     })
     .join("");
 
@@ -95,8 +77,8 @@ function renderProducts(data) {
 
       // Find the index of this product
       const index = Array.from(container.children).indexOf(this);
-      if (index !== -1 && data[index]) {
-        showProductDetails(data[index]);
+      if (index !== -1 && products[index]) {
+        showProductDetails(products[index]);
       }
     });
   });
@@ -179,16 +161,16 @@ function showProductDetails(product) {
   if (images.length === 1) {
     // Just one image, no need for a slider
     imagesHtml = `
-      <div class="md:w-1/2">
+      <div class="md:w-1/2 h-[400px] md:h-[500px] flex items-center justify-center bg-white">
         <img src="${images[0]}" alt="${
       product.name || product.title || "Product"
-    }" class="w-full h-full object-contain">
+    }" class="max-w-full max-h-full object-contain">
       </div>
     `;
   } else {
     // Multiple images, create a slider
     imagesHtml = `
-      <div class="md:w-1/2 relative product-detail-slider">
+      <div class="md:w-1/2 h-[400px] md:h-[500px] relative product-detail-slider bg-white">
         <div class="product-slider-container h-full relative">
           ${images
             .map(
@@ -196,9 +178,13 @@ function showProductDetails(product) {
             <div class="product-slide absolute inset-0 transition-opacity duration-500 ${
               index === 0 ? "opacity-100" : "opacity-0"
             }" data-index="${index}">
-              <img src="${img}" alt="${
+              <div class="h-full flex items-center justify-center">
+                <img src="${img}" alt="${
                 product.name || product.title || "Product"
-              } image ${index + 1}" class="w-full h-full object-contain">
+              } image ${
+                index + 1
+              }" class="max-w-full max-h-full object-contain">
+              </div>
             </div>
           `
             )
